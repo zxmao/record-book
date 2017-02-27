@@ -1,3 +1,85 @@
+# 文档路径
+https://docs.jboss.org/hibernate/orm
+
+## 配置选项
+* [Configuration properties](https://docs.jboss.org/hibernate/orm/4.3/devguide/en-US/html/apa.html)
+* 所有的属性也定义在
+  * `org.hibernate.cfg.Environment`
+  * `org.hibernate.cfg.AvailableSettings`
+  * `org.hibernate.jpa.AvailableSettings`
+
+## 优化
+
+__开启用于调试的日志__
+
+```yml
+org.hibernate.SQL: debug # 如果开了 show_sql 就可以不用开这个
+org.hibernate.id: info # Logs SQL statements for id generation
+org.hibernate.type: debug # Logs the JDBC-Parameter which are passed to a query (very verboose)
+org.hibernate.cache: debug # Logs cache related activities
+org.hibernate.stat: debug
+org.hibernate.event.internal: trace # 查看所有的缓存操作
+org.springframework.cache: trace
+```
+
+__开启用于调试的配置__
+
+```yml
+hibernate.generate_statistics: true
+hibernate.format_sql: true
+hibernate.show_sql: true
+hibernate.use_sql_comments: true
+```
+
+__二级缓存配置__
+
+```yml
+# 只针对使用了注解的实体进行缓存
+javax.persistence.sharedCache.mode: ENABLE_SELECTIVE
+# 缓存处理类
+hibernate.cache.region.factory_class: com.hazelcast.hibernate.HazelcastLocalCacheRegionFactory
+hibernate.cache.hazelcast.instance_name: default # 使用现有的 Hazelcast 实例,而不是创建
+hibernate.cache.use_second_level_cache: true # 启用二级缓存
+hibernate.cache.use_query_cache: true # 启用查询缓存
+hibernate.cache.use_reference_entries: true # 缓存使用引用
+hibernate.cache.use_structured_entries: true # 使缓存数据的结构更可读
+hibernate.cache.use_minimal_puts: true # 提示 Hibernate 减少缓存 put
+hibernate.cache.default_cache_concurrency_strategy: nonstrict-read-write # 默认缓存并发级别
+```
+
+```java
+// Hibernate 统计信息
+Statistics statistics = sessionFactory.getStatistics();
+statistics.setStatisticsEnabled(true);
+statistics.logSummary();
+```
+
+
+* 使用 `BatchSize` 控制集合加载的数据量
+* 可通过设置 `default_batch_fetch_size` 来控制默认的加载量
+* 使用 Bag 或 List 来实现反向的集合,而非 Set, 这样可以在不获取整个集合的前提下向集合中添加元素
+* 缓存只会缓存实体本身而__不会__缓存实体关系,例如: OneToMany 集合
+* 集合缓存需要额外添加注解 `@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)`
+
+
+### Fetching 策略
+建议保留默认,建议在查询时控制,细粒度控制
+* WHEN -  何时获取数据 - 通过各个 ToOne 和 ToMany 上的 fetch 控制
+  * EAGER - ToOne 默认
+    * 当关联关系较深时会加载大量数据
+  * LAZY - ToMany 默认
+    * 懒惰级别
+      * 属性级别: 较少使用
+      * ToOne
+        * 代理实现: 在使用 ID 时不会导致整个对象加载,代理对象由 Hibernate 管理
+        * 非代理实现: 在使用 ID 时会导致整个对象加载,需要构建时织入
+  * EXTRA LAZY - 通过 Hibernate LazyCollection 注解设置
+    * 只对集合有效
+    * 在使用集合内元素的 ID 时也不会导致集合中实体的数据被加载
+    * 使用集合中的单个元素只会加载单个,而不会加载整个集合
+    * 集合大小不会被缓存
+* HOW - 如何获取数据 - Hibernate 扩展,使用 Fetch 注解控制
+ * JOIN
     * 适用于 ToOne 关系
     * 在对集合使用时需要注意一般数据库 Select 会比 Join 更快
   * SELECT
@@ -14,6 +96,7 @@
     * 可通过指定多个配置在实际使用时使用不同的策略
 
 ### 一级缓存 vs 二级缓存
+
 * 一级缓存
   * Session 级别缓存
   * 在同一个事务中
