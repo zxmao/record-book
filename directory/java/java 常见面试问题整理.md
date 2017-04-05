@@ -317,7 +317,7 @@ ArrayList和LinkedList都实现了List接口，他们有以下的不同点：
 
 #### 43.Java中的两种异常类型是什么？他们有什么区别？
 
-> Java中有两种异常：受检查的(checked)异常和不受检查的(unchecked)异常。不受检查的异常不需要在方法或者是构造函数上声明，就算方法或者是构造函数的执行可能会抛出这样的异常，并且不受检查的异常可以传播到方法或者是构造函数的外面。相反，受检查的异常必须要用throws语句在方法或者是构造函数上声明。这里有Java异常处理的一些小建议。
+> Java中有两种异常：受检查的(checked)异常和不受检查的(unchecked)异常。不受检查的异常不需要在方法或者是构造函数上声明，就算方法或者是构造函数的执行可能会抛出这样的异常，并且不受检查的异常可以传播到方法或者是构造函数的外面。相反，受检查的异常必须要用throws语句在方法或者是构造函数上声明。这里有[Java异常处理](https://www.javacodegeeks.com/2013/07/java-exception-handling-tutorial-with-examples-and-best-practices.html "Java异常处理")的一些小建议。
 
 #### 44.Java中Exception和Error有什么区别？
 
@@ -454,17 +454,23 @@ applet可以经历下面的状态：
 
 #### 71.Java的Swing组件使用了哪种设计模式？
 
-> Java中的Swing组件使用了MVC(视图-模型-控制器)设计模式。
+> Java中的Swing组件使用了MVC(视图-模型-控制器)[设计模式](https://www.amazon.cn/gp/product/B001130JN8/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=importnew-23&linkCode=as2&camp=536&creative=3200&creativeASIN=B001130JN8 "设计模式")。
 
 ### JDBC
 
 #### 72.什么是JDBC？
 
->JDBC是允许用户在不同数据库之间做选择的一个抽象层。JDBC允许开发者用JAVA写数据库应用程序，而不需要关心底层特定数据库的细节。
+>JDBC是允许用户在不同数据库之间做选择的一个抽象层。[JDBC允许开发者用JAVA写数据库应用程序](https://www.javacodegeeks.com/2014/03/java-8-friday-java-8-will-revolutionize-database-access.html "JDBC允许开发者用JAVA写数据库应用程序")，而不需要关心底层特定数据库的细节。
 
 #### 73.解释下驱动(Driver)在JDBC中的角色。
 
-> JDBC驱动提供了特定厂商对JDBC API接口类的实现，驱动必须要提供java.sql包下面这些类的实现：Connection, Statement, PreparedStatement,CallableStatement, ResultSet和Driver。
+> JDBC驱动提供了特定厂商对JDBC API接口类的实现，驱动必须要提供java.sql包下面这些类的实现：
+[Connection](http://docs.oracle.com/javase/7/docs/api/java/sql/Connection.html "Connection"), 
+[Statement](http://docs.oracle.com/javase/7/docs/api/java/sql/Statement.html "Statement"), 
+[PreparedStatement](http://docs.oracle.com/javase/7/docs/api/java/sql/PreparedStatement.html "PreparedStatement"),
+[CallableStatement](http://docs.oracle.com/javase/7/docs/api/java/sql/CallableStatement.html "CallableStatement"), 
+[ResultSet](http://docs.oracle.com/javase/7/docs/api/java/sql/ResultSet.html "ResultSet")
+和[Driver](http://docs.oracle.com/javase/7/docs/api/java/sql/Driver.html "Driver")。
 
 #### 74.Class.forName()方法有什么作用？
 
@@ -488,7 +494,7 @@ applet可以经历下面的状态：
 
 #### 78.什么是RMI？
 
-> Java远程方法调用(Java RMI)是Java API对远程过程调用(RPC)提供的面向对象的等价形式，支持直接传输序列化的Java对象和分布式垃圾回收。远程方法调用可以看做是激活远程正在运行的对象上的方法的步骤。RMI对调用者是位置透明的，因为调用者感觉方法是执行在本地运行的对象上的。看下RMI的一些注意事项。
+> Java远程方法调用(Java RMI)是Java API对远程过程调用(RPC)提供的面向对象的等价形式，支持直接传输序列化的Java对象和分布式垃圾回收。远程方法调用可以看做是激活远程正在运行的对象上的方法的步骤。RMI对调用者是位置透明的，因为调用者感觉方法是执行在本地运行的对象上的。看下[RMI的一些注意事项](https://www.javacodegeeks.com/2013/11/two-things-to-remember-when-using-java-rmi.html "RMI的一些注意事项")。
 
 #### 79.RMI体系结构的基本原则是什么？
 
@@ -570,7 +576,8 @@ RMI体系结构分以下几层：
 
 #### 94.GenericServlet和HttpServlet有什么区别？
 
-> GenericServlet是一个通用的协议无关的Servlet，它实现了Servlet和ServletConfig接口。继承自GenericServlet的Servlet应该要覆盖service()方法。最后，为了开发一个能用在网页上服务于使用HTTP协议请求的Servlet，你的Servlet必须要继承自HttpServlet。这里有Servlet的例子。
+> GenericServlet是一个通用的协议无关的Servlet，它实现了Servlet和ServletConfig接口。继承自GenericServlet的Servlet应该要覆盖service()方法。最后，为了开发一个能用在网页上服务于使用HTTP协议请求的Servlet，你的Servlet必须要继承自HttpServlet。这里有
+[Servlet的例子](https://examples.javacodegeeks.com/tag/servlet/ "Servlet的例子")。
 
 #### 95.解释下Servlet的生命周期。
 
@@ -596,7 +603,7 @@ RMI体系结构分以下几层：
 
 #### 100.如何知道是哪一个客户端的机器正在请求你的Servlet？
 
-> ServletRequest类可以找出客户端机器的IP地址或者是主机名。getRemoteAddr()方法获取客户端主机的IP地址，getRemoteHost()可以获取主机名。看下这里的例子。
+> ServletRequest类可以找出客户端机器的IP地址或者是主机名。getRemoteAddr()方法获取客户端主机的IP地址，getRemoteHost()可以获取主机名。看下这里的[例子](https://examples.javacodegeeks.com/enterprise-java/servlet/get-client-s-address-and-hostname-in-servlet/ "例子")。
 
 #### 101.HTTP响应的结构是怎么样的？
 
@@ -604,7 +611,8 @@ HTTP响应由三个部分组成：
 
 > 状态码(Status Code)：描述了响应的状态。可以用来检查是否成功的完成了请求。请求失败的情况下，状态码可用来找出失败的原因。如果Servlet没有返回状态码，默认会返回成功的状态码HttpServletResponse.SC_OK。
 
-> HTTP头部(HTTP Header)：它们包含了更多关于响应的信息。比如：头部可以指定认为响应过期的过期日期，或者是指定用来给用户安全的传输实体内容的编码格式。如何在Serlet中检索HTTP的头部看这里。
+> HTTP头部(HTTP Header)：它们包含了更多关于响应的信息。比如：头部可以指定认为响应过期的过期日期，或者是指定用来给用户安全的传输实体内容的编码格式。如何在Serlet中检索HTTP的头部看
+[这里](https://examples.javacodegeeks.com/enterprise-java/servlet/get-all-request-headers-in-servlet/ "这里")。
 
 > 主体(Body)：它包含了响应的内容。它可以包含HTML代码，图片，等等。主体是由传输在HTTP消息中紧跟在头部后面的数据字节组成的。
 
@@ -636,11 +644,13 @@ HTTP响应由三个部分组成：
 
 #### 107.什么是JSP页面？
 
-> JSP页面是一种包含了静态数据和JSP元素两种类型的文本的文本文档。静态数据可以用任何基于文本的格式来表示，比如：HTML或者XML。JSP是一种混合了静态内容和动态产生的内容的技术。这里看下JSP的例子。
+> JSP页面是一种包含了静态数据和JSP元素两种类型的文本的文本文档。静态数据可以用任何基于文本的格式来表示，比如：HTML或者XML。JSP是一种混合了静态内容和动态产生的内容的技术。这里看下
+[JSP的例子](http://examples.javacodegeeks.com/enterprise-java/jsp/sample-jsp-java-server-page/ "JSP 例子")。
 
 #### 108.JSP请求是如何被处理的？
 
-> 浏览器首先要请求一个以.jsp扩展名结尾的页面，发起JSP请求，然后，Web服务器读取这个请求，使用JSP编译器把JSP页面转化成一个Servlet类。需要注意的是，只有当第一次请求页面或者是JSP文件发生改变的时候JSP文件才会被编译，然后服务器调用servlet类，处理浏览器的请求。一旦请求执行结束，servlet会把响应发送给客户端。这里看下如何在JSP中获取请求参数。
+> 浏览器首先要请求一个以.jsp扩展名结尾的页面，发起JSP请求，然后，Web服务器读取这个请求，使用JSP编译器把JSP页面转化成一个Servlet类。需要注意的是，只有当第一次请求页面或者是JSP文件发生改变的时候JSP文件才会被编译，然后服务器调用servlet类，处理浏览器的请求。一旦请求执行结束，servlet会把响应发送给客户端。这里看下
+[如何在JSP中获取请求参数](https://examples.javacodegeeks.com/enterprise-java/jsp/get-request-parameter-in-jsp-page/ "如何在JSP中获取请求参数")。
 
 #### 109.JSP有什么优点？
 
@@ -699,5 +709,5 @@ HTTP响应由三个部分组成：
 - config
 - pageContext
 
-
+翻译： [ImportNew.com](http://www.importnew.com/ "") - [miracle1919](http://www.importnew.com/author/miracle1919 "")
 
