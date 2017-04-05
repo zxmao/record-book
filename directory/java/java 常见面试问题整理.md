@@ -221,7 +221,7 @@ ArrayList和LinkedList都实现了List接口，他们有以下的不同点：
 
 - LinkedList比ArrayList更占内存，因为LinkedList为每一个节点存储了两个引用，一个指向前一个元素，一个指向下一个元素。
 
-- 也可以参考ArrayList vs. LinkedList。
+- 也可以参考[ArrayList vs. LinkedList](https://www.javacodegeeks.com/2013/12/arraylist-vs-linkedlist.html "ArrayList vs. LinkedList")。
 
 #### 28.Comparable和Comparator接口是干什么的？列出它们的区别。
 
