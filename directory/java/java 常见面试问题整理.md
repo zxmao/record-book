@@ -105,7 +105,7 @@ Java提供和支持创建抽象类和接口。它们的实现有共同点，不�
 
 - 接口是绝对抽象的，不可以被实例化。抽象类也不可以被实例化，但是，如果它包含main方法的话是可以被调用的。
 
-
+也可以参考[JDK8中抽象类和接口的区别](https://www.javacodegeeks.com/2014/04/abstract-class-versus-interface-in-the-jdk-8-era.html "JDK8中抽象类和接口的区别")
 
 
 
