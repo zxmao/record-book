@@ -21,3 +21,22 @@
    
 ## 8.查看同步状态
    show slave status
+
+	
+## I had the same error and solve it this way:
+
+1 . Delete the orphaned volumes in Docker, you can use the built-in docker volume command. The built-in command also deletes any directory in /var/lib/docker/volumes that is not a volume so make sure you didn't put anything in there you want to save.
+
+Warning be very careful with this if you have some data you want to keep
+
+Cleanup:
+
+$ docker volume rm $(docker volume ls -qf dangling=true)
+Additional commands:
+
+List dangling volumes:
+
+$ docker volume ls -qf dangling=true
+List all volumes:
+
+$ docker volume ls
