@@ -125,6 +125,21 @@
 ### IV.软件相关安装使用步骤
 
   PS:详情见基础必备模块
+  
+### V.文档更新日志
+
+<table>
+    <tr style="background:#DCDCDC">
+        <td>日期</td>
+        <td>作者</td>
+        <td>版本</td>
+    </tr>
+    <tr>
+        <td>2018-08-06 01:30:00 </td>
+        <td>Christopher</td>
+        <td>v0.1</td>
+    </tr>
+</table>
 
 
 
