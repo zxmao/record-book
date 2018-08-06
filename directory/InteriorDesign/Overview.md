@@ -11,11 +11,11 @@
 
 #### 基础必备
 
-| 书名      | 书籍链接 | 软件下载 |
-| --------- | -----:| -----:|
-| 《Illustrator CC从入门到精通PS伴侣》  | [link-](https://item.jd.com/12371583.html#crumb-wrap) |  [link-](http://www.xiazaizhijia.com/soft/98595.html)     |
-| 《Photoshop CS6从入门到精通PS教程  | [link-](https://item.jd.com/12371603.html#crumb-wrap) |  [link-](http://xiazai.zol.com.cn/detail/15/146785.shtml)     |
-| 《中文版3ds Max 2016从入门到精通》  | [link-](https://item.jd.com/12341130.html) |  [link-](http://wm.makeding.com/redirect/url?segment=BBsbSv7HGiws6zCviN7G-ySxKe1eiSuU6TclxgPahb6MY_So-Jaoj1Y9wDSU4hFbQjP8qyugVolqcNoGZkMs3mC7t9l-A8uCAymW0ebn9bLLwXt9uhTQFq_XOsbWm65NJ8J_2TH9UVZ6mhQ8tIjwakPzqSeGjNjSaE-RyVy3be2qi-BuWCByswhqAtsG8s7KIrvJ9yFEFeM9xqT7lTGDztii7AK8LW7JLqhrRr8u5928L7s5O06KMaKvo4dRgueTTk8vC00pyPl-jyB0fIqgBHAtxdXERM36sa9E4JmzyKdk254eqlamXgehllaVyDiQI_-GJoNYSp3gQX9HRvrEJNG30PEP6qzIOPwSJXcZDVNLkk-LtgmkaKuCeD5auhDj&utm_medium=wm&utm_source=http%3A%2F%2Fwww.3dmax8.com%2F3dmax%2F2018%2F0115%2F7720_2.html&utm_content=3DS+max--&utm_term=3dmax8)     |
+| 序号       | 书名   | 书籍链接 | 软件下载 |
+| --------- | -----:| -----:  | -----:  |
+| 1 | 《Illustrator CC从入门到精通PS伴侣》  | [book1](https://item.jd.com/12371583.html#crumb-wrap) |  [software1](http://www.xiazaizhijia.com/soft/98595.html)     |
+| 2 | 《Photoshop CS6从入门到精通PS教程  | [book2](https://item.jd.com/12371603.html#crumb-wrap) |  [software2](http://xiazai.zol.com.cn/detail/15/146785.shtml)     |
+| 3 | 《中文版3ds Max 2016从入门到精通》  | [book3](https://item.jd.com/12341130.html) |  [software3](http://wm.makeding.com/redirect/url?segment=BBsbSv7HGiws6zCviN7G-ySxKe1eiSuU6TclxgPahb6MY_So-Jaoj1Y9wDSU4hFbQjP8qyugVolqcNoGZkMs3mC7t9l-A8uCAymW0ebn9bLLwXt9uhTQFq_XOsbWm65NJ8J_2TH9UVZ6mhQ8tIjwakPzqSeGjNjSaE-RyVy3be2qi-BuWCByswhqAtsG8s7KIrvJ9yFEFeM9xqT7lTGDztii7AK8LW7JLqhrRr8u5928L7s5O06KMaKvo4dRgueTTk8vC00pyPl-jyB0fIqgBHAtxdXERM36sa9E4JmzyKdk254eqlamXgehllaVyDiQI_-GJoNYSp3gQX9HRvrEJNG30PEP6qzIOPwSJXcZDVNLkk-LtgmkaKuCeD5auhDj&utm_medium=wm&utm_source=http%3A%2F%2Fwww.3dmax8.com%2F3dmax%2F2018%2F0115%2F7720_2.html&utm_content=3DS+max--&utm_term=3dmax8)     |
 
 
 
