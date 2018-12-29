@@ -1,15 +1,15 @@
-镜像
+### 镜像
 
-1.获取镜像
-  1.1 获取镜像
-    docker pull ubuntu
-  1.2 指定版本获取
-    docker pull ubuntu:14.04
-  1.3 指定注册服务器仓库下载
-    docker pull registry.hub.docker.com/unbutu:14.04
-    docker pull dl.dockerpool.com:5000/unbutu:14.04
-  1.4 创建容器,运行bash
-    docker run -t -i ubuntu /bin/bash
+#### I.获取镜像
+ - 获取镜像
+   > docker pull ubuntu
+ - 指定版本获取
+   > docker pull ubuntu:14.04
+ - 指定注册服务器仓库下载
+   > docker pull registry.hub.docker.com/unbutu:14.04
+   > docker pull dl.dockerpool.com:5000/unbutu:14.04
+ - 创建容器,运行bash
+   > docker run -t -i ubuntu /bin/bash
 
 2.查看镜像信息
   2.1 列出本地主机上已有的镜像
