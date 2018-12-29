@@ -47,29 +47,29 @@
 #### V.创建镜像
   - 创建镜像的方法有三种:
     > 基于已有镜像的容器创建
-      基于本地模板导入
-      基于Dockerfile创建
+    > 基于本地模板导入
+    > 基于Dockerfile创建
 
   - 基于已有镜像的容器创建
     > docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] 主要选项包括:
-     - -a, --authoer=""    作者信息
-     - -m, --message=""    提交信息
-     - -p, --pause=true    提交时暂停容器运行
+     > -a, --authoer=""    作者信息
+     > -m, --message=""    提交信息
+     > -p, --pause=true    提交时暂停容器运行
   - 演示-基于已有镜像的容器创建
     > docker run -ti ubuntu:14.04 /bin/bash
-      touch test
-      exit
-      docker commit -m "添加一个测试文件test" -a "Christopher" 8448b61d4d26 christopher/test
-      sha256:c06c012b32aca8c7153c35eb8f4be21dd2e62fa4bb821982dc83163e6b123ad2
-      docker run christopher/test echo 'hello! I am new images for test!'
-      hello! I am new images for test!
+    > touch test
+    > exit
+    > docker commit -m "添加一个测试文件test" -a "Christopher" 8448b61d4d26 christopher/test
+    > sha256:c06c012b32aca8c7153c35eb8f4be21dd2e62fa4bb821982dc83163e6b123ad2
+    > docker run christopher/test echo 'hello! I am new images for test!'
+    > hello! I am new images for test!
   - 基于本地模板导入
     > 可以直接从一个操作系统模板文件导入一个镜像
-      这里使用OpenVZ提供的模板创建,OpenVZ模板下载地址 http://openvz.org/Download/templates/precreated
+    > 这里使用OpenVZ提供的模板创建,OpenVZ模板下载地址 http://openvz.org/Download/templates/precreated
   - 演示-基于本地模板导入
     > wget https://download.openvz.org/template/precreated/ubuntu-14.04-x86_64-minimal.tar.gz
-      cat ubuntu-14.04-x86_64-minimal.tar.gz |docker import - templates/ubuntu:14.04
-      docker images
+    > cat ubuntu-14.04-x86_64-minimal.tar.gz |docker import - templates/ubuntu:14.04
+    > docker images
 
 #### VI.存出和载入镜像
   - 使用docker save和 docker load
@@ -77,13 +77,13 @@
     > docker save -o ubuntu_14.04.tar christopher/test
   - 导入镜像 docker load --input [存出文件名字],docker load < [存出文件名字]
     > docker load --input ubuntu_14.04.tar
-      docker load < ubuntu_14.04.tar
+    > docker load < ubuntu_14.04.tar
 
 #### VII.上传镜像
   - 使用 docker push 默认上传到DockerHub官方仓库 需要登录 docker push NAME[:TAG]
     > 用户user
-      演示-
-      添加新的镜像标签
-        docker tag test:latest user/test:latest
-     上传镜像
-        docker push user/test:latest
+    > 演示-
+    > 添加新的镜像标签
+    > docker tag test:latest user/test:latest
+    > 上传镜像
+    > docker push user/test:latest
