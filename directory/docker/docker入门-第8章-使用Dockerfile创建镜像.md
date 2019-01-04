@@ -9,13 +9,13 @@
   - 镜像操作指令
   - 容器启动时指令
 
-  - # 第一行必须制定基于的基础镜像
+  - 第一行必须制定基于的基础镜像
   - FROM ubuntu
 
-  - # 维护者信息
+  - 维护者信息
   - MAINTAINER docker_user junxiongz@163.com
 
-  - # 镜像操作指令
+  - 镜像操作指令
   - RUN echo "deb http://archive.ubuntu.com/ubuntu/ raring main universe" >> /etc/apt/sources.list
   - RUN apt-get update && apt-get install -y nginx
   - RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
